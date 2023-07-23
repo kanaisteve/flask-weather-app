@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body class="bg-info text-white">
+    <div class="text-center">
+        <h1 class="mt-5">Weather App</h1>
+        <form action="">
+            <div class="container">
+                <div class="row">
+                    <!-- City Name -->
+                    <div class="col-sm">
+                        <input type="text" name="city_name" id="cityName" class="form-control" placeholder="City">  
+                    </div>
+
+                    <!-- State Name -->
+                    <div class="col-sm">
+                        <input type="text" name="state_name" id="stateName" class="form-control" placeholder="ON">
+                    </div>
+
+                    <!-- Country Name -->
+                    <div class="col-sm">
+                        <input type="text" name="country_name" id="countryName" class="form-control" placeholder="Zambia">
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-light my-3">Find</button>
+        </form>
+
+        {% if data %}
+            {{ data.main }}: {{ data.description }}
+            <img src="https://openweathermap.org/img/wn/{{data.icon}}@2x.png" alt="Icon">
+            {{ data.temperature }}
+        {% endif %}
+    </div>
+</body>
+</html>
